@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BlackGreen Studio — One‑File Site</title>
+
+<style>
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== GLOBAL ===== */
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to bottom, #000, #003300);
+  color: #e0e0e0;
+  overflow-x: hidden;
+}
+
+a {
+  color: #00ff66;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+a:hover {
+  color: #ffffff;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  padding: 1.5rem 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.7rem;
+  color: #00ff66;
+  font-weight: bold;
+}
+
+/* ===== HERO ===== */
+.hero {
+  text-align: center;
+  padding: 6rem 1rem;
+  background-size: cover;
+  background-position: center;
+  background-image: url("data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD...");
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  opacity: 0.8;
+  margin-bottom: 1.5rem;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.btn-primary {
+  background: #00ff66;
+  color: #000;
+}
+
+.btn-primary:hover {
+  background: #00cc55;
+}
+
+/* ===== FEATURES ===== */
+.features {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  padding: 4rem 2rem;
+}
+
+.feature-card {
+  background: #002200;
+  padding: 2rem;
+  border-radius: 10px;
+  text-align: center;
+  width: 260px;
+  border: 1px solid #004400;
+}
+
+/* ===== GALLERY ===== */
+.gallery {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.gallery-grid {
+  display: grid;
+  margin: 2rem auto;
+  max-width: 900px;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+}
+
+.gallery-grid img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+/* ===== TRAINING ===== */
+.training {
+  padding: 4rem;
+  background: #001500;
+}
+
+.training h2 {
+  text-align: center;
+}
+
+.training-block {
+  margin-top: 2rem;
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.training-item {
+  background: #002200;
+  border-radius: 8px;
+  padding: 2rem;
+  width: 280px;
+  border: 1px solid #004400;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  padding: 2rem;
+  background: #000;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* ===== ANIMATION ===== */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 1.2s ease forwards;
+}
+
+@keyframes fadeIn {
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 1rem 1.5rem;
+    flex-direction: column;
+    text-align: center;
+  }
+  .features {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".fade-in").forEach((el, i) => {
+    setTimeout(() => el.style.opacity = "1", i * 150);
+  });
+});
+</script>
+
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar fade-in">
+  <a class="logo" href="#">BlackGreen</a>
+  <div class="links">
+    <a href="#features">О проекте</a> |
+    <a href="#gallery">Галерея</a> |
+    <a href="#training">Тренировки</a> |
+    <a href="#contact">Контакты</a>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="hero fade-in">
+  <h1>Современный чёрно‑зелёный дизайн</h1>
+  <p>Минимализм, анимации, глубина. Всё в одном файле.</p>
+  <a href="#gallery" class="btn btn-primary">Смотреть галерею</a>
+</section>
+
+<!-- ===== FEATURES ===== -->
+<section id="features" class="features">
+  <div class="feature-card fade-in">Красивый UI</div>
+  <div class="feature-card fade-in">Анимации</div>
+  <div class="feature-card fade-in">Простота использования</div>
+</section>
+
+<!-- ===== GALLERY ===== -->
+<section id="gallery" class="gallery fade-in">
+  <h2>Галерея</h2>
+  <div class="gallery-grid">
+    <img src="data:image/jpeg;base64,/9j/4AAQSk..." alt="">
+    <img src="data:image/jpeg;base64,/9j/4AAQSk..." alt="">
+    <img src="data:image/jpeg;base64,/9j/4AAQSk..." alt="">
+  </div>
+</section>
+
+<!-- ===== TRAINING ===== -->
+<section id="training" class="training fade-in">
+  <h2>План тренировок</h2>
+  <div class="training-block">
+    <div class="training-item">
+      <h3>День 1</h3>
+      <p>Жим, подтягивания, плечи, трицепс</p>
+    </div>
+    <div class="training-item">
+      <h3>День 2</h3>
+      <p>Присед, выпады, тяга, пресс</p>
+    </div>
+    <div class="training-item">
+      <h3>День 3</h3>
+      <p>Тяга, жим стоя, кардио</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer id="contact">
+  © 2026 BlackGreen Studio
+</footer>
+
+</body>
+</html>
